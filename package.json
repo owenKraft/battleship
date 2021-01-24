@@ -1,7 +1,7 @@
 {
   "name": "battleship",
   "version": "0.1.0",
-  "homepage": "https://owenkraft.github.io/battleship",
+  "homepage": "http://owenkraft.github.io/battleship",
   "babel": {
     "presets": [
       "@babel/preset-env"
