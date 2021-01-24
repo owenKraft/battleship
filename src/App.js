@@ -17,6 +17,12 @@ function App() {
             )}
           />
           <Route 
+            path="/start" exact
+            render={(props) => (
+              <Hero />
+            )}
+          />
+          <Route 
             path="/play"
             render={(props) => (
               <PlayingArea
