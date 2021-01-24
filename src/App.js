@@ -8,7 +8,7 @@ function App() {
 
   return (
     <div>
-      <BrowserRouter>
+      <BrowserRouter basename="/battleship">
         <Switch>
           <Route 
             path="/" exact
