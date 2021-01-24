@@ -8,8 +8,7 @@ function App() {
 
   return (
     <div>
-      hello world
-      {/* <BrowserRouter>
+      <BrowserRouter>
         <Switch>
           <Route 
             path="/" exact
@@ -25,7 +24,7 @@ function App() {
             )}
           />
         </Switch>
-      </BrowserRouter> */}
+      </BrowserRouter>
     </div>
   );
 }
