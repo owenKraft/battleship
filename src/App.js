@@ -8,8 +8,9 @@ function App() {
 
   return (
     <div>
-      <BrowserRouter>
-      <Switch>
+      hello world
+      {/* <BrowserRouter>
+        <Switch>
           <Route 
             path="/" exact
             render={(props) => (
@@ -24,7 +25,7 @@ function App() {
             )}
           />
         </Switch>
-      </BrowserRouter>
+      </BrowserRouter> */}
     </div>
   );
 }
