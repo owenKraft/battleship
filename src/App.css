@@ -1,3 +1,17 @@
+:root {
+  --gray-panel-color: #e0e0e094;
+}
+
+body {
+  background: #111;
+  color: white;
+}
+
+select {
+  background-color: transparent;
+  border: 1px solid black;
+}
+
 .App {
   text-align: center;
 }
@@ -35,4 +49,244 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* //////////////////////////// */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.hero {
+  position: absolute;
+  right: 0;
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  z-index: 2;
+}
+
+.hero header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px 100px;
+  z-index: 1000;
+}
+
+.hero .background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: .2;
+}
+
+.text {
+  position: relative;
+  z-index: 10;
+}
+
+.text h2 {
+  font-size: 5rem;
+  font-weight: 800;
+  line-height: 1em;
+  text-transform: uppercase;
+}
+
+.text p {
+  font-size: 1.1em;
+  margin: 20px 0;
+  font-weight: 400;
+  max-width: 800px;
+}
+
+button {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 10px;
+  padding: 10px 30px;
+}
+
+.header {
+  height: 75px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 25px;
+  padding-right: 25px;
+  text-transform: uppercase;
+  color: white;
+}
+
+.header .background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: .2;
+  z-index: -20;
+}
+
+.header-text {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2000;
+}
+
+.header-link {
+  color: white;
+}
+
+.newGameBtn {
+
+}
+
+.btn-inverse {
+  background-color: var(--gray-panel-color);
+  color: black;
+  transition: 0.75s;
+  border-color: black;
+}
+
+a:hover, a:visited, a:link, a:active {
+  text-decoration: none!important;
+}
+
+.playing-area {
+  display: flex;
+  flex-wrap: wrap;
+  width: auto;
+  justify-content: space-around;
+}
+
+.info-panel {
+  width: 100%;
+  /* background: rgba(250, 250, 133, 0.582); */
+  background: #e0e0e094;
+  color: black;
+  font-size: 1.5rem;
+  font-weight: bold;
+  height: 50px;
+  margin: 20px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.ship-selector {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--gray-panel-color);
+  color: black;
+  margin-top: 2%;
+  border-radius: 10px;
+}
+
+.ship-selector h3 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 2%;
+}
+
+.ship-selector div {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; 
+}
+
+
+
+.gameboard {
+  margin: 20px;
+}
+
+.grid {
+  display: flex;
+}
+
+.row {
+  display: block;
+}
+
+.cell {
+  border: 1px solid white;
+  margin: 2px 1px;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeShip, .valid {
+  /* background-color: #00C851; */
+  background-color: lightgreen;
+  opacity: 80%;
+}
+
+.placeShip-invalid, .invalid {
+  background-color: #ff4444;
+  opacity: 80%;
+}
+
+.playerShip {
+  background-color: white;
+}
+
+.emoji {
+  font-size: 30px;
+  height: 100%;
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+.miss {
+  background: lightblue;
+}
+
+.hit {
+  background: #fdad5c;
+}
+
+.info-panel-success {
+  background-color: lightgreen;
+  opacity: 80%;
+}
+
+.info-panel-danger {
+  background-color: #ff4444;
+  opacity: 80%;
+}
+
+.info-panel-warning {
+  background-color: rgb(248, 248, 136);
+  opacity: 80%;
 }
