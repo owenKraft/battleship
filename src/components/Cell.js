@@ -28,7 +28,6 @@ const Cell = (props) => {
             }
         } else if(agent === "computer" && gameState === "player turn"){
             const clickCompCell = gameLogic.clickCompCell(e,board,ships)
-            console.log("clickCompCell = ",clickCompCell)
             if(clickCompCell === "already clicked"){
                 document.querySelector(".info-panel").classList.add("info-panel-warning")
                 props.updateMessage("Try another square.")
