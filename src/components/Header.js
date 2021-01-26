@@ -3,7 +3,7 @@ import battleship_background from '../resources/battleship_background.jpg'
 
 const Header = (props) => {
     const refresh = () => {
-        window.location.reload()
+        // window.location.reload()
     }
 
     return (
@@ -13,7 +13,7 @@ const Header = (props) => {
                     <h1 className="header-link">Battleship</h1>
                 </Link>
                 
-                <Link to="/play">
+                <Link to="/">
                         <button className="newGameBtn" onClick={refresh}>New game</button>
                 </Link>
             </div>
