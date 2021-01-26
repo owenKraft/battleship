@@ -14,8 +14,7 @@ const Header = (props) => {
                 </Link>
                 
                 <Link to="/play">
-                        {/* <button className="newGameBtn" onClick={refresh}>New game</button> */}
-                        <button className="newGameBtn">New game</button>
+                        <button className="newGameBtn" onClick={refresh}>New game</button>
                 </Link>
             </div>
             <img className="background" src={battleship_background} alt=""></img>

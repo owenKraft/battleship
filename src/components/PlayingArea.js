@@ -27,7 +27,6 @@ const PlayingArea = (props) => {
     const updateGameState = (gameState) => {
         setGameState(gameState)
         if(gameState === "comp turn"){
-            // const compTurn = setTimeout(compAI(playerBoard,playerShips,compLastTurn,updateCompLastTurn),3000)
             const compTurn = runCompTurn()
             console.log(compTurn)
             if(gameLogic.checkIfAllShipsSunk(playerShips)){
@@ -35,7 +34,6 @@ const PlayingArea = (props) => {
                 setMessage("Oh no! Your enemy has sunk all of your ships! To play again, click 'New Game' in the upper right hand corner.")
             } else {
                 setGameState("player turn")
-                // setMessage("Your turn.")
             }
         } else if(gameState === "game over"){
             endGame()
@@ -82,7 +80,9 @@ const PlayingArea = (props) => {
 
     return (
         <div>
-            <Header />
+            <Header 
+                resetGame={props.resetGame}
+            />
             <div className="playing-area">
                 <InfoPanel 
                     message = {message}

@@ -1,10 +1,11 @@
 import './App.css';
-import React from 'react';
+import React, {useState} from 'react';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Hero from './components/Hero'
 import PlayingArea from './components/PlayingArea';
 
 function App() {
+  const [game,resetGame] = useState(false)
 
   return (
     <div>
@@ -26,6 +27,8 @@ function App() {
             path="/play"
             render={(props) => (
               <PlayingArea
+                game={game}
+                resetGame={resetGame}
               />
             )}
           />
