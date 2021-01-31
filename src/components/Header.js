@@ -3,7 +3,7 @@ import battleship_background from '../resources/battleship_background.jpg'
 
 const Header = (props) => {
     const refresh = () => {
-        // window.location.reload()
+        window.location.reload()
     }
 
     return (
