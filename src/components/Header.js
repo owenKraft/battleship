@@ -13,7 +13,7 @@ const Header = (props) => {
                     <h1 className="header-link">Battleship</h1>
                 </Link>
                 
-                <Link to="/">
+                <Link to="/play">
                         <button className="newGameBtn" onClick={refresh}>New game</button>
                 </Link>
             </div>
