@@ -35,7 +35,6 @@ const GameLogic = (props) => {
                 }
             }
         } else if(validShipPlacement.validPlacement === false){
-            console.log(validShipPlacement.message)
             if(orientation === "vertical"){
                 if(yCoord + shipLength > gameboard[0].length){
                     for(let y = yCoord; y < gameboard[0].length; y++){
@@ -69,7 +68,6 @@ const GameLogic = (props) => {
             message = "invalid orientation! orientation must be either 'horizontal' or 'vertical'"
         }
 
-        console.log(message)
         return message
     }
 
@@ -107,8 +105,6 @@ const GameLogic = (props) => {
         const cell = e.target.closest(".cell")
         const x = Number(cell.attributes[1].value)
         const y = Number(cell.attributes[2].value)
-
-        console.log("getCoordinates",x,y)
 
         return {cell,x,y}
     }

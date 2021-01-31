@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import Header from './Header'
+import Footer from './Footer'
 import GameBoard from './GameBoard'
 import GameLogic from './GameLogic'
 import gameboardFactory from './gameboardFactory'
@@ -16,7 +17,11 @@ const PlayingArea = (props) => {
     const [compName,setCompName] = useState(gameLogic.getAdmiral())
     const [compBoard,setCompBoard] = useState(gameboardFactory())
     const [compShips,setCompShips] = useState(gameLogic.createShips())
-    const [compLastTurn,setCompLastTurn] = useState({mode: "random"})
+    const [compLastTurn,setCompLastTurn] = useState({
+        mode: "random",
+        resultsArray: null,
+        direction: null,
+    })
 
     const [message,setMessage] = useState("Place your fleet on your board!")
 
@@ -27,14 +32,14 @@ const PlayingArea = (props) => {
     const updateGameState = (gameState) => {
         setGameState(gameState)
         if(gameState === "comp turn"){
-            const compTurn = runCompTurn()
-            console.log(compTurn)
-            if(gameLogic.checkIfAllShipsSunk(playerShips)){
-                endGame()
-                setMessage("Oh no! Your enemy has sunk all of your ships! To play again, click 'New Game' in the upper right hand corner.")
-            } else {
-                setGameState("player turn")
-            }
+            runCompTurn()
+            // if(gameLogic.checkIfAllShipsSunk(playerShips)){
+            //     endGame()
+            //     setMessage("Oh no! Your enemy has sunk all of your ships! To play again, click 'New Game' in the upper right hand corner.")
+            //     gameLogic.updateInfoPanel("danger")
+            // } else {
+            //     setGameState("player turn")
+            // }
         } else if(gameState === "game over"){
             endGame()
         }
@@ -76,6 +81,14 @@ const PlayingArea = (props) => {
             }
             setMessage(compName + resultMessage + "Your turn.")
         },rand)
+
+        if(gameLogic.checkIfAllShipsSunk(playerShips)){
+            endGame()
+            setMessage("Oh no! Your enemy has sunk all of your ships! To play again, click 'New Game' in the upper right hand corner.")
+            gameLogic.updateInfoPanel("danger")
+        } else {
+            setGameState("player turn")
+        }
     }
 
     return (
@@ -107,6 +120,7 @@ const PlayingArea = (props) => {
                     updateMessage = {updateMessage}
                 />
             </div>
+            <Footer />
         </div>
     )
 }

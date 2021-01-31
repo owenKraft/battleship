@@ -1,6 +1,7 @@
 import './App.css';
 import React, {useState} from 'react';
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+// import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { HashRouter, Switch, Route } from "react-router-dom";
 import Hero from './components/Hero'
 import PlayingArea from './components/PlayingArea';
 
@@ -9,7 +10,7 @@ function App() {
 
   return (
     <div>
-      <BrowserRouter basename="/battleship">
+      <HashRouter basename="/battleship">
         <Switch>
           <Route 
             path="/" exact
@@ -33,7 +34,7 @@ function App() {
             )}
           />
         </Switch>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
